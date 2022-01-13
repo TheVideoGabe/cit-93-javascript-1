@@ -11,9 +11,16 @@
 
 // console.log(isFreezing)
 
-let age = 23
-let child = age < 7
-let senior = age > 65
+// let age = 23
+// let child = age < 7
+// let senior = age > 65
 
-console.log(child)
-console.log(senior)
+// console.log(child)
+// console.log(senior)
+
+let age = 23
+let isChild = age <= 7
+let isSenior = age >= 65
+
+console.log(isChild)
+console.log(isSenior)
