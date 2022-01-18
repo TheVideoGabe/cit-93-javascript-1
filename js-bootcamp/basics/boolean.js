@@ -6,10 +6,15 @@
 // >= grater than or equal to operator
 
 
-// let temp = 31
-// let isFreezing = temp < 32
+//  let temp = 180
 
-// console.log(isFreezing)
+// if (temp <= 32) {
+//     console.log('it is freezing outside!')
+// }
+
+// if (temp >= 110) {
+//     console.log('it is way too hot outside!')
+// }
 
 // let age = 23
 // let child = age < 7
@@ -18,9 +23,19 @@
 // console.log(child)
 // console.log(senior)
 
-let age = 23
-let isChild = age <= 7
-let isSenior = age >= 65
+// let age = 23
+// let isChild = age <= 7
+// let isSenior = age >= 65
 
-console.log(isChild)
-console.log(isSenior)
+// console.log(isChild)
+// console.log(isSenior)
+
+let age = 65
+
+if (age <= 7) {
+    console.log('Child Pricing')
+}
+
+if (age >= 65) {
+    console.log('Senior Pricing')
+}
