@@ -16,7 +16,7 @@ showOnPage(result)
 
 // default arguments
 let getScoreText = function (name = 'ANON', score = 0) {
-   return 'Name: ' + name + ' - score:  ' + score
+   return `Name: ${name} - score: ${score}`
 }
 
 let scoreText = getScoreText(undefined, 99)
@@ -35,9 +35,11 @@ let scoreText = getScoreText(undefined, 99)
     // console.log(getTip)
     // showOnPage(getTip)
 
-    // actual solution
+    // actual solution and now challenge #2
     let getTip = function (total, tipPercent = .2) {
-        return total * tipPercent
+        let percenttage = tipPercent * 100
+        let tip = total * tipPercent
+        return `a ${percenttage}% tip on ${total} would be ${tip}`
     }
 
     let tip = getTip(40, .25)
