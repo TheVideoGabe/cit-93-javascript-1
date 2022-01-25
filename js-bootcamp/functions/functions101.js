@@ -1,5 +1,12 @@
 // // function - input (argument), code, output (return variable)
 
+const showOnPage = function (text) {
+    let newParagraph = document.createElement("p");
+    newParagraph.innerHTML = text;
+    let outputDiv = document.getElementById("output");
+    outputDiv.append(newParagraph);
+  }
+
 // let greetUser = function () {
 //     console.log('welcome user')
 // }
@@ -30,3 +37,6 @@ let temp2 = convert(68)
 
 console.log(temp1)
 console.log(temp2)
+
+showOnPage(temp1)
+showOnPage(temp2)
