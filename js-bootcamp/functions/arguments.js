@@ -45,3 +45,17 @@ let scoreText = getScoreText(undefined, 99)
     let tip = getTip(40, .25)
     console.log(tip)
     showOnPage(tip)
+
+    // solution 
+
+    let getTip = function (total, tipPercent = .2) {
+        let percent = tipPercent * 100
+        let tip = total * tipPercent
+        return `a ${percent}% tip on $${total} would be ${tip}`
+    }
+
+    let tip = getTip(40, .25)
+    console.log(tip)
+    showOnPage(tip)
+    
+// you can also run the calculations inside the string and remove the variables
