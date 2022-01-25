@@ -31,6 +31,15 @@ let scoreText = getScoreText(undefined, 99)
         // together
         return 'Bill and Tip: ' + (bill + tip)
     }
-    let getTip = totalBill ()
-    console.log(getTip)
-    showOnPage(getTip)
+    //let getTip = totalBill ()
+    // console.log(getTip)
+    // showOnPage(getTip)
+
+    // actual solution
+    let getTip = function (total, tipPercent = .2) {
+        return total * tipPercent
+    }
+
+    let tip = getTip(40, .25)
+    console.log(tip)
+    showOnPage(tip)
