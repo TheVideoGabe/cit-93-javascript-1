@@ -20,3 +20,7 @@ let person = {
 }
 
 console.log(`My name is ${person.name} and Im ${person.age}, I also live in ${person.location}.`)
+
+person.age = 24
+
+console.log(`My name is ${person.name} and Im ${person.age}, I also live in ${person.location}.`)
