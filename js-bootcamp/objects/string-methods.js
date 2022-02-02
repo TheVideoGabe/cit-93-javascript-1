@@ -47,3 +47,20 @@ console.log(passwordChallenge('abc123!@#$%^&'))
 showOnPage(passwordChallenge('abc123!@#$%^&'))
 console.log(passwordChallenge('asdpasdfpoijpassword'))
 showOnPage(passwordChallenge('asdpasdfpoijpassword'))
+
+// Andrews solution
+
+let isValidPassword = function (password) {
+    if (password.length >= 8 && !password.includes('password')) {
+        return true
+    } else {
+        return false
+    }
+}
+
+console.log(passwordChallenge('asdp'))
+showOnPage(passwordChallenge('asdp'))
+console.log(passwordChallenge('abc123!@#$%^&'))
+showOnPage(passwordChallenge('abc123!@#$%^&'))
+console.log(passwordChallenge('asdpasdfpoijpassword'))
+showOnPage(passwordChallenge('asdpasdfpoijpassword'))
