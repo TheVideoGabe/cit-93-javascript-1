@@ -41,3 +41,16 @@ let makeGuess = function (guess) {
 
 console.log(makeGuess(1))
 showOnPage(makeGuess(1))
+
+// andrews solution 
+
+let makeGuess = function (guess) {
+    let minimum = 1
+    let maximum = 5
+    let randomNumber = Math.floor(Math.random() * (maximum - minimum)) + minimum
+    
+    return guess === randomNum
+}
+
+console.log(makeGuess(1))
+showOnPage(makeGuess(1))
