@@ -26,7 +26,13 @@ toDoList.forEach(function (item, index) {
     showOnPage(`Item Number ${index + 1} on my to do list is to ${item}`)
     // console.log(item)
 })
+// andrewssolution video 40
+console.log(`you have ${todos.length} todos!`)
 
+toDoList.forEach(function (todo, index) {
+    const num = index + 1
+    console.log(`${num}. ${todo}`)
+})
 // // andrews solution
 //  const todos = ['order cat food', 'clean kitchen', 'buy food', 'do work', 'excercise']
 //  todo.splice(2, 1)
