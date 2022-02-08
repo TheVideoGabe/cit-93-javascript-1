@@ -23,6 +23,13 @@ showOnPage(toDoList.shift())
 showOnPage(toDoList)
 
 
+// andrews solution
+ const todos = ['order cat food', 'clean kitchen', 'buy food', 'do work', 'excercise']
+ todo.splice(2, 1)
+ todo.push('buy coffee')
+ todo.shift()
+ console.log(`you have ${todos.length} todos!`)
+ console.log(todos)
 
 // console.log(toDoList[0])
 // console.log(toDoList[3])
