@@ -34,6 +34,15 @@ for (let count = 0; count < toDoList.length; count ++) {
 }
 // That was a little hard. but it makes sense.
 
+// andrews solution video 41 
+for (let count = 0; count < todo.length; count ++) {
+    const num = count + 1
+    const todo = todos[count]
+    // console.log(`${num}. ${toDoList[count]}`)
+    showOnPage(`${num}. ${toDoList[count]}`)
+}
+
+
 // andrewssolution video 40
 // console.log(`you have ${todos.length} todos!`)
 
