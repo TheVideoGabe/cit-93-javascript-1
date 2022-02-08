@@ -1,9 +1,9 @@
-// //  const showOnPage = function (text) {
-// //      let newParagraph = document.createElement("p");
-// //      newParagraph.innerHTML = text;
-// //      let outputDiv = document.getElementById("output");
-// //      outputDiv.append(newParagraph);
-// //    };
+  const showOnPage = function (text) {
+      let newParagraph = document.createElement("p");
+      newParagraph.innerHTML = text;
+      let outputDiv = document.getElementById("output");
+      outputDiv.append(newParagraph);
+    };
 
 // const notes = ['note 1', 'note 2', 'note 3']
 
@@ -69,11 +69,16 @@ const notes = [{}, {
 // console.log(otherObject === otherObject)
 // console.log(notes.indexOf('note 2'))
 
- console.log(notes.length)
- console.log(notes)
+//  console.log(notes.length)
+//  console.log(notes)
+ showOnPage(notes.length)
+ showOnPage(notes)
 
  const index = notes.findIndex(function (note, index) {
-     console.log(note)
+    //  console.log(note)
+     showOnPage(note.title)
+     showOnPage(note.body)
      return note.title === 'Habbits to improve on'
  })
- console.log(index)
+//  console.log(index)
+ showOnPage(index)
