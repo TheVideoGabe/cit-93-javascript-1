@@ -1,9 +1,9 @@
-  const showOnPage = function (text) {
-      let newParagraph = document.createElement("p");
-      newParagraph.innerHTML = text;
-      let outputDiv = document.getElementById("output");
-      outputDiv.append(newParagraph);
-    };
+   const showOnPage = function (text) {
+       let newParagraph = document.createElement("p");
+       newParagraph.innerHTML = text;
+       let outputDiv = document.getElementById("output");
+       outputDiv.append(newParagraph);
+     };
 
 // create an array with 5 to do's
 // you have x to do's
@@ -17,22 +17,32 @@ const toDoList = ['Wake up', 'Eat Breakfast', 'Brush My Teeth', 'Take A Shower',
 // splice = left position on index - right how many removed after it and insert other strings.
 toDoList.splice(2,1)
 toDoList.push('poop')
- console.log(toDoList.shift())
+//  console.log(toDoList.shift())
 // console.log(toDoList)
- showOnPage(toDoList.shift())
+  showOnPage(toDoList.shift())
 // showOnPage(toDoList)
-toDoList.forEach(function (item, index) {
-    console.log(`Item Number ${index + 1} on my to do list is to ${item}`)
-    showOnPage(`Item Number ${index + 1} on my to do list is to ${item}`)
-    // console.log(item)
-})
-// andrewssolution video 40
-console.log(`you have ${todos.length} todos!`)
+// toDoList.forEach(function (item, index) {
+//     console.log(`Item Number ${index + 1} on my to do list is to ${item}`)
+//     // showOnPage(`Item Number ${index + 1} on my to do list is to ${item}`)
+//     // console.log(item)
+// })
 
-toDoList.forEach(function (todo, index) {
-    const num = index + 1
-    console.log(`${num}. ${todo}`)
-})
+for (let count = 0; count < toDoList.length; count ++) {
+    const num = count + 1
+    console.log(`${num}. ${toDoList[count]}`)
+    showOnPage(`${num}. ${toDoList[count]}`)
+}
+// That was a little hard. but it makes sense.
+
+// andrewssolution video 40
+// console.log(`you have ${todos.length} todos!`)
+
+// toDoList.forEach(function (todo, index) {
+//     const num = index + 1
+//     console.log(`${num}. ${todo}`)
+// })
+
+
 // // andrews solution
 //  const todos = ['order cat food', 'clean kitchen', 'buy food', 'do work', 'excercise']
 //  todo.splice(2, 1)
