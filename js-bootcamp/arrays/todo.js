@@ -160,3 +160,32 @@ showOnPage(thingsToDo(toDoList))
 
 // // console.log(todos)
 // showOnPage(todos)
+
+
+// Video 44 andrews solution
+
+const todos = [{
+  text: 'order cat food',
+  completed: true
+}, {
+  text: 'clean kitchen',
+  completed:false
+}, {
+  text: 'buy food',
+  completed: true
+}, {
+  text: 'do work',
+  completed: false
+}, {
+  text: 'excercise',
+  completed: true
+}]
+
+const getThingsToDo = function (todos) {
+  return todos.filter(function (todo) {
+     return todo.completed === false
+ })
+}
+
+// console.log(getThingsToDo(todos))
+showOnPage(getThingsToDo(todos))
