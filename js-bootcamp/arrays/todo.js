@@ -1,9 +1,9 @@
-//    const showOnPage = function (text) {
-//        let newParagraph = document.createElement("p");
-//        newParagraph.innerHTML = text;
-//        let outputDiv = document.getElementById("output");
-//        outputDiv.append(newParagraph);
-//      };
+   const showOnPage = function (text) {
+       let newParagraph = document.createElement("p");
+       newParagraph.innerHTML = text;
+       let outputDiv = document.getElementById("output");
+       outputDiv.append(newParagraph);
+     };
 
 // // create an array with 5 to do's
 // // you have x to do's
@@ -91,62 +91,72 @@ const toDoList = [{
   complete: true
 }, {
   task: 'Brush My Teeth',
-  complete: true
-}, {
-  task: 'Take A Shower',
-  complete: true
-}, {
-  task: 'Go Excercise',
-  complete: true
-}]
-
-const deleteTodo = function (toDoList, Tasks) {
-  const index = toDoList.findIndex(function (toDoList) {
-    return toDoList.task.toLowerCase() === Tasks.toLowerCase()
-  })
-  if (index > -1) {
-    toDoList.splice(index, 1)
-  }
-}
-
-deleteTodo(toDoList, 'Go Excercise')
-
-// console.log(toDoList)
-showOnPage(toDoList)
-
-
-// Andrews solution 
-
-const todos = ['order cat food', 'clean kitchen', 'buy food', 'do work', 'excercise']
-
-const todos = [{
-  task: 'order cat food',
-  complete: true
-}, {
-  task: 'clean kitchen',
-  complete:false
-}, {
-  task: 'buy food',
-  complete: true
-}, {
-  task: 'do work',
   complete: false
 }, {
-  task: 'excercise',
-  complete: true
+  task: 'Take A Shower',
+  complete: false
+}, {
+  task: 'Go Excercise',
+  complete: false
 }]
 
-const deleteTodo = function (todos, todoText) {
-  const index = todos.findIndex(function (todo) {
-    return todo.text.toLowerCase() === todoText.toLowerCase()
-  })
+// const deleteTodo = function (toDoList, Tasks) {
+//   const index = toDoList.findIndex(function (toDoList) {
+//     return toDoList.task.toLowerCase() === Tasks.toLowerCase()
+//   })
+//   if (index > -1) {
+//     toDoList.splice(index, 1)
+//   }
+// }
 
-  if (index > -1) {
-    todos.splice(index, 1)
-  }
+const thingsToDo = function (toDoList) {
+  return toDoList.filter(function (list) {
+     return list.complete === false
+ })
 }
 
-deleteTodo(todos, 'buy food')
+// console.log(thingsToDo(toDoList))
+showOnPage(thingsToDo(toDoList))
 
-// console.log(todos)
-showOnPage(todos)
+
+// deleteTodo(toDoList, 'Go Excercise')
+
+// console.log(toDoList)
+// showOnPage(toDoList)
+
+
+// // Andrews solution 
+
+// const todos = ['order cat food', 'clean kitchen', 'buy food', 'do work', 'excercise']
+
+// const todos = [{
+//   task: 'order cat food',
+//   complete: true
+// }, {
+//   task: 'clean kitchen',
+//   complete:false
+// }, {
+//   task: 'buy food',
+//   complete: true
+// }, {
+//   task: 'do work',
+//   complete: false
+// }, {
+//   task: 'excercise',
+//   complete: true
+// }]
+
+// const deleteTodo = function (todos, todoText) {
+//   const index = todos.findIndex(function (todo) {
+//     return todo.text.toLowerCase() === todoText.toLowerCase()
+//   })
+
+//   if (index > -1) {
+//     todos.splice(index, 1)
+//   }
+// }
+
+// deleteTodo(todos, 'buy food')
+
+// // console.log(todos)
+// showOnPage(todos)
