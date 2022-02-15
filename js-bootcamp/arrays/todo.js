@@ -115,8 +115,23 @@ const thingsToDo = function (toDoList) {
  })
 }
 
+const sortToDoList = function (toDoList) {
+  toDoList.sort(function (a, b) {
+      if (a.complete < b.complete) {
+          return -1
+      } else if (b.complete < a.complete) {
+          return 1
+      } else {
+          return 0
+      }
+  })
+}
+
+sortToDoList(toDoList)
+// console.log(toDoList)
+showOnPage(toDoList)
 // console.log(thingsToDo(toDoList))
-showOnPage(thingsToDo(toDoList))
+// showOnPage(thingsToDo(toDoList))
 
 
 // deleteTodo(toDoList, 'Go Excercise')
@@ -164,28 +179,28 @@ showOnPage(thingsToDo(toDoList))
 
 // Video 44 andrews solution
 
-const todos = [{
-  text: 'order cat food',
-  completed: true
-}, {
-  text: 'clean kitchen',
-  completed:false
-}, {
-  text: 'buy food',
-  completed: true
-}, {
-  text: 'do work',
-  completed: false
-}, {
-  text: 'excercise',
-  completed: true
-}]
+// const todos = [{
+//   text: 'order cat food',
+//   completed: true
+// }, {
+//   text: 'clean kitchen',
+//   completed:false
+// }, {
+//   text: 'buy food',
+//   completed: true
+// }, {
+//   text: 'do work',
+//   completed: false
+// }, {
+//   text: 'excercise',
+//   completed: true
+// }]
 
-const getThingsToDo = function (todos) {
-  return todos.filter(function (todo) {
-     return todo.completed === false
- })
-}
+// const getThingsToDo = function (todos) {
+//   return todos.filter(function (todo) {
+//      return todo.completed === false
+//  })
+// }
 
-// console.log(getThingsToDo(todos))
-showOnPage(getThingsToDo(todos))
+// // console.log(getThingsToDo(todos))
+// showOnPage(getThingsToDo(todos))
