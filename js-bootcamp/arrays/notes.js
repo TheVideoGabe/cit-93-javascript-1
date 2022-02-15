@@ -1,9 +1,9 @@
-  const showOnPage = function (text) {
-      let newParagraph = document.createElement("p");
-      newParagraph.innerHTML = text;
-      let outputDiv = document.getElementById("output");
-      outputDiv.append(newParagraph);
-    };
+//   const showOnPage = function (text) {
+//       let newParagraph = document.createElement("p");
+//       newParagraph.innerHTML = text;
+//       let outputDiv = document.getElementById("output");
+//       outputDiv.append(newParagraph);
+//     };
 
 // const notes = ['note 1', 'note 2', 'note 3']
 
@@ -51,34 +51,48 @@
 //     console.log(notes[count])
 // }
 
-const notes = [{}, {
-    title: 'my next trip',
-    body: 'I want to go to Italy',
+const notes = [{
+    title: 'My next trip',
+    body: 'I would like to go to Spain',
 }, {
-    title: 'Habbits to improve on',
+    title: 'Habbits to work on',
     body: 'Playing guitar more often',
 }, {
-    title: 'Amazon purchases',
-    body: 'get christmas gifts for family',
+    title: 'Office modification',
+    body: 'Get a new chair',
 }]
 
-// console.log(notes.length)
-// console.log(notes)
-// let someObject = {}
-// let otherObject = someObject
-// console.log(otherObject === otherObject)
-// console.log(notes.indexOf('note 2'))
+// const findNote = function (notes, noteTitle) {
+//     const index = notes.findIndex(function (note, index) {
+//     return note.title.toLowerCase() === noteTitle.toLowerCase()
+//     })
+//     return notes[index]
+// }
 
-//  console.log(notes.length)
-//  console.log(notes)
- showOnPage(notes.length)
- showOnPage(notes)
+// const note = findNote(notes, 'Office modification')
+// console.log(note)
 
- const index = notes.findIndex(function (note, index) {
-    //  console.log(note)
-     showOnPage(note.title)
-     showOnPage(note.body)
-     return note.title === 'Habbits to improve on'
- })
-//  console.log(index)
- showOnPage(index)
+
+const findNote = function (notes, noteTitle) {
+    const index = notes.find(function (note, index) {
+     return note.title.toLowerCase() === noteTitle.toLowerCase()
+    })
+}
+
+const note = findNote(notes, 'some other office modification')
+console.log(note)
+
+
+// showOnPage(note)
+
+//  showOnPage(notes.length)
+//  showOnPage(notes)
+
+//  const index = notes.findIndex(function (note, index) {
+//     //  console.log(note)
+//      showOnPage(note.title)
+//      showOnPage(note.body)
+//      return note.title === 'Habbits to improve on'
+//  })
+// //  console.log(index)
+//  showOnPage(index)
