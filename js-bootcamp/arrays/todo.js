@@ -113,3 +113,40 @@ deleteTodo(toDoList, 'Go Excercise')
 
 // console.log(toDoList)
 showOnPage(toDoList)
+
+
+// Andrews solution 
+
+const todos = ['order cat food', 'clean kitchen', 'buy food', 'do work', 'excercise']
+
+const todos = [{
+  task: 'order cat food',
+  complete: true
+}, {
+  task: 'clean kitchen',
+  complete:false
+}, {
+  task: 'buy food',
+  complete: true
+}, {
+  task: 'do work',
+  complete: false
+}, {
+  task: 'excercise',
+  complete: true
+}]
+
+const deleteTodo = function (todos, todoText) {
+  const index = todos.findIndex(function (todo) {
+    return todo.text.toLowerCase() === todoText.toLowerCase()
+  })
+
+  if (index > -1) {
+    todos.splice(index, 1)
+  }
+}
+
+deleteTodo(todos, 'buy food')
+
+// console.log(todos)
+showOnPage(todos)
