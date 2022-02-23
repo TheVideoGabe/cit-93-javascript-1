@@ -10,22 +10,6 @@ const notes = [{
     body: 'Get a new chair',
 }]
 
-// Dom document object model
-
-// const p = document.querySelector('p')
-// p.remove()
-
-//Query All and remove
-const ps = document.querySelectorAll('p')
-
-ps.forEach(function (p) {
-    p.textContent = "*Censored*"
-    // console.log(p.textContent)
-    // p.remove()
+document.querySelector('button').addEventListener('click', function (e) {
+    e.target.textContent = 'The button was clicked'
 })
-
-// add new element
-
-const newParagraph = document.createElement('p')
-newParagraph.textContent = 'this is a new paragraph'
-document.querySelector('body').appendChild(newParagraph)
