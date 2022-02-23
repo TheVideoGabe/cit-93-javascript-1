@@ -53,3 +53,8 @@ document.querySelector('button').addEventListener('click', function (e) {
     e.target.textContent = 'You just added a new todo.'
     console.log('todo #')
 })
+
+// Andrews Solution
+document.querySelector('button').addEventListener('click', function (e) {
+    console.log('Add a new todo... ')
+})
