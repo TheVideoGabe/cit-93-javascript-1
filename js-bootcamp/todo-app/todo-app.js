@@ -15,52 +15,43 @@ const todos = [{
     completed: true
   }]
 
-// print todos left.
-// print p for every todo no order.
+// 1. setup div for todos
+//2. setup filters and wire up a new filter input to change it.
+// 3. create a renderTodods function to render and rerender the latest filtered data
 
-const todosLeft = todos.filter(function (list) {
-    return list.completed = false
-})
+// Video 57 challenge starts here
+const filters = {
+  textSearch: ''
+}
 
-const everyTodo = document.createElement('h1')
-everyTodo.textContent = `To Do's left = ${todosLeft.length}`
-document.querySelector('body').appendChild(everyTodo)
-
-todos.forEach(function (listOfItems) {
-    const p = document.createElement('p')
-    p.textContent = listOfItems.text
-    document.querySelector('body').appendChild(p)
-})
-
-// Andrews solution
-
-const incompleteTodos = todos.filter(function (todo) {
+const renderTodos = function (todos, filters) {
+  const filteredTodos = todos.filter(function (todo) {
+      return todo.text.toLowerCase().includes(filters.searchText.toLowerCase())
+    })
+    document.querySelector('#todos').innerHTML = ''
+    
+    const summary = document.createElement('h2')
+    summary.textContent = `You have ${incompleteTodos.length} todos left`
+    document.querySelector('#todos').appendChild(summary)
+    
+    filteredTodos.forEach(function (todo) {
+      const p = document.createElement('p')
+      p.textContent = todo.text
+      document.querySelector('#todos').appendChild(p)
+    })
+  }
+  const incompleteTodos = filteredTodos.filter(function (todo) {
     return !todo.completed
-})
+  })
+  // Video 57 Challenge ends here.
 
-const summary = document.createElement('h2')
-summary.textContent = `You have ${incompleteTodos.length} todos left`
-document.querySelector('body').appendChild(summary)
+renderTodos(todos, filters)
 
-todos.forEach(function (todo) {
-    const p = document.createElement('p')
-    p.textContent = todo.text
-    document.querySelector('body').appendChild(p)
-})
-
-//// new challenge
-document.querySelector('#target').addEventListener('click', function (e) {
-    e.target.textContent = 'You just added a new todo.'
-    console.log('todo #')
-})
-
-// Andrews Solution
 document.querySelector('button').addEventListener('click', function (e) {
     console.log('Add a new todo... ')
 })
 
-// video 55 my code
-
 document.querySelector('#new-todo').addEventListener('input', function (e) {
-  console.log(e.target.value)
+  filters.searchText = e.target.value
+  renderTodos(todos, filters)
 })

@@ -11,7 +11,7 @@ const notes = [{
 }]
 
 const filters = {
-    searchText: ``
+    searchText: ''
 }
 const renderNotes = function (notes, filters) {
     const filteredNotes = notes.filter(function (note) {
