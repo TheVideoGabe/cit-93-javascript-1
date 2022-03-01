@@ -58,3 +58,9 @@ document.querySelector('#target').addEventListener('click', function (e) {
 document.querySelector('button').addEventListener('click', function (e) {
     console.log('Add a new todo... ')
 })
+
+// video 55 my code
+
+document.querySelector('#new-todo').addEventListener('input', function (e) {
+  console.log(e.target.value)
+})
