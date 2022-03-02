@@ -97,9 +97,20 @@ document.querySelector('#search-text').addEventListener('input', function (e) {
 // 4. rerender app
 // 5. clear input field
 
+// document.querySelector('#new-form').addEventListener('submit', function (e) {
+//   e.preventDefault()
+//   todos.push(e.target.elements.todo.value, false)
+//   renderTodos(todos, filters)
+//   e.target.elements.todo.value = ''
+// })
+
+// Video 58 Andrews Solution
 document.querySelector('#new-form').addEventListener('submit', function (e) {
   e.preventDefault()
-  todos.push(e.target.elements.todo.value, false)
+  todos.push({
+    text: e.target.elements.todo.value,
+    completed: false
+  })
   renderTodos(todos, filters)
   e.target.elements.todo.value = ''
 })
