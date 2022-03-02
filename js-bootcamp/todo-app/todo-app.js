@@ -86,15 +86,20 @@ const renderTodos = function (todos, filters) {
 
 renderTodos(todos, filters)
 
-document.querySelector('#add-todo').addEventListener('click', function (e) {
-    console.log('Add a new todo... ')
-})
-
-document.querySelector('#new-todo-text').addEventListener('input', function (e) {
-    console.log(e.target.value)
-})
-
 document.querySelector('#search-text').addEventListener('input', function (e) {
   filters.searchText = e.target.value
   renderTodos(todos, filters)
+})
+
+// 1. create a form with a single input for todo text
+// 2. setup a submit handler and cancel the default action so we can respond
+// 3. add a new item to the todos array with that text data (completed value of false) assume its ot completed because its being added
+// 4. rerender app
+// 5. clear input field
+
+document.querySelector('#new-form').addEventListener('submit', function (e) {
+  e.preventDefault()
+  todos.push(e.target.elements.todo.value, false)
+  renderTodos(todos, filters)
+  e.target.elements.todo.value = ''
 })
