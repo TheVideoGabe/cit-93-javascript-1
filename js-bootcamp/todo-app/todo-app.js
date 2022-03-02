@@ -27,16 +27,24 @@ const filters = {
 };
 
 const renderTodos = function (todos, filters) {
-  const filteredTodos = todos.filter(function (todo) {
+  let filteredTodos = todos.filter(function (todo) {
     return todo.text.toLowerCase().includes(filters.searchText.toLowerCase());
   });
+  
+  filteredTodos = filteredTodos.filter(function (todo) {
+    if (filters.hideCompleted) {
+      return !todo.completed
+    } else {
+      return true
+    }
+  })
 
   const incompleteTodos = todos.filter(function (todo) {
     return !todo.completed;
   });
-
+  
   document.querySelector("#todos").innerHTML = "";
-
+  
   const summary = document.createElement("h2");
   summary.textContent = `You have ${incompleteTodos.length} todos left`;
   document.querySelector("#todos").appendChild(summary);
@@ -85,6 +93,6 @@ document.querySelector("#new-form").addEventListener("submit", function (e) {
 // 4. setup rerndertodos to remove completed items
 
 document.querySelector("#hide-completed").addEventListener("change", function (e) {
-    filters.hideCompleted = e.target.checked;
+    filters.hideCompleted = e.target.checked
     renderTodos(todos, filters);
   });
