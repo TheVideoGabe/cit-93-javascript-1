@@ -1,5 +1,3 @@
-// Andrews solution video 65
-
 // fetch existing todos from local storage
 // get savedtodos
 const getSavedTodos = function () {
@@ -11,7 +9,18 @@ const getSavedTodos = function () {
     return [];
   }
 };
-
+// VIDEO 69 Challenge
+// wire up button event
+// remove todo by id
+// save and rerender the todo list
+const removeTodo = function (id) {
+    const todoIndex = todos.findIndex(function (todo) {
+        return todo.id === id
+    })
+    if (todoIndex > -1) {
+        todos.splice(todoIndex, 1)
+    }
+}
 // save todos to local storage
 // save todos
 const saveTodos = function (todos) {
@@ -43,13 +52,6 @@ const renderTodos = function (todos, filters) {
   });
 };
 
-// setup root div
-// setup and append checkbox (set type attribute)
-// setup and append a span (set text)
-// setup and append a button (set text)
-
-
-
 // get DOM elements for an individual note
 // generate todo Dom
 const generateTodoDOM = function (todo) {
@@ -66,12 +68,12 @@ const generateTodoDOM = function (todo) {
     
     button.textContent = 'X'
     todoEl.appendChild(button)
-
-        
+    button.addEventListener('click', function () {
+        removeTodo(todo.id)
+        renderTodos(todos, filters)
+    })
     return todoEl
 };
-
-
 
 // get DOM elements for list summary
 // generate summaryDOM
