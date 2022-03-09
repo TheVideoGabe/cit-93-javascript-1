@@ -1,3 +1,7 @@
+// add event handler for check box
+// modify the correct objects completed property (toggle todo)
+// save and rerender (like the others)
+
 // fetch existing todos from local storage
 // get savedtodos
 const getSavedTodos = function () {
@@ -61,7 +65,16 @@ const generateTodoDOM = function (todo) {
     const button = document.createElement('button')
 
     checkEl.setAttribute('type', 'checkbox')
+    checkEl.checked = todo.completed
     todoEl.appendChild(checkEl)
+
+    checkEl.addEventListener('change', function () {
+        if (checkEl.checked) {
+            removeTodo(todo.id)
+        }
+        saveTodos(todos)
+        renderTodos(todos, filters)
+    })
     
     textEl.textContent = todo.text;
     todoEl.appendChild(textEl)
