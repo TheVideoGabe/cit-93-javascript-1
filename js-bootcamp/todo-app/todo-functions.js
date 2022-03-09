@@ -1,7 +1,3 @@
-// add event handler for check box
-// modify the correct objects completed property (toggle todo)
-// save and rerender (like the others)
-
 // fetch existing todos from local storage
 // get savedtodos
 const getSavedTodos = function () {
@@ -13,9 +9,7 @@ const getSavedTodos = function () {
     return [];
   }
 };
-// VIDEO 69 Challenge
-// wire up button event
-// remove todo by id
+
 // save and rerender the todo list
 const removeTodo = function (id) {
     const todoIndex = todos.findIndex(function (todo) {
@@ -25,6 +19,19 @@ const removeTodo = function (id) {
         todos.splice(todoIndex, 1)
     }
 }
+
+// toggle the completed value for a todo
+const toggleTodo = function (id) {
+    const todo = todos .find(function (todo) {
+        return todo.id === id
+    })
+
+    if (todo !== undefined) {
+        todo.completed = !todo.completed
+    }
+
+}
+
 // save todos to local storage
 // save todos
 const saveTodos = function (todos) {
@@ -33,7 +40,6 @@ const saveTodos = function (todos) {
 
 // render app todos based on filters
 // render todos
-// fixed mistakes
 const renderTodos = function (todos, filters) {
   let filteredTodos = todos.filter(function (todo) {
     const searchTextMatch = todo.text.toLowerCase().includes(filters.searchText.toLowerCase());
@@ -69,9 +75,7 @@ const generateTodoDOM = function (todo) {
     todoEl.appendChild(checkEl)
 
     checkEl.addEventListener('change', function () {
-        if (checkEl.checked) {
-            removeTodo(todo.id)
-        }
+        toggleTodo(todo.id)
         saveTodos(todos)
         renderTodos(todos, filters)
     })
