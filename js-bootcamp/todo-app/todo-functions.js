@@ -70,6 +70,7 @@ const generateTodoDOM = function (todo) {
     todoEl.appendChild(button)
     button.addEventListener('click', function () {
         removeTodo(todo.id)
+        saveTodos(todos)
         renderTodos(todos, filters)
     })
     return todoEl
