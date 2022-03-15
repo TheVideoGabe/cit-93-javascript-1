@@ -18,19 +18,19 @@ if (note === undefined) {
 
 titleElement.value = note.title
 bodyElement.value = note.body
-edited.textContent = 'last edited: ' + moment(note.updatedAt).fromNow()
+edited.textContent = generateLastEdited(note.updatedAt)
 
 titleElement.addEventListener('input', function (e) {
     note.title = e.target.value
     note.updatedAt = moment().valueOf()
-    edited.textContent = 'last edited: ' + moment(note.updatedAt).fromNow()
+    edited.textContent = generateLastEdited(note.updatedAt)
     localStorage.setItem('notes', JSON.stringify(notes))
 })
 
 bodyElement.addEventListener('input', function (e) {
     note.body = e.target.value
     note.updatedAt = moment().valueOf()
-    edited.textContent = 'last edited: ' + moment(note.updatedAt).fromNow()
+    edited.textContent = generateLastEdited(note.updatedAt)
     localStorage.setItem('notes', JSON.stringify(notes))
 })
 
@@ -53,6 +53,6 @@ window.addEventListener('storage', function (e) {
         
         titleElement.value = note.title
         bodyElement.value = note.body
-        edited.textContent = 'last edited: ' + moment(note.updatedAt).fromNow()
+        edited.textContent = generateLastEdited(note.updatedAt)
     }
 })
