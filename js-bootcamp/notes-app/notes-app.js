@@ -55,15 +55,13 @@ window.addEventListener('storage', function (e) {
 // get timestamps fot both
 // find out which comes first and log the time tostring()
 
-const now = new Date('march 1 1981 0:00:00')
-const timestamp = now.getTime()
+const dateOne = new Date('march 1 2017 12:00:00')
+const dateTwo = new Date()
+const dateOneTimestamp = dateOne.getTime()
+const dateTwoTimestamp = dateTwo.getTime()
 
-const now2 = new Date('march 3 1985 0:00:00')
-const timestamp2 = now2.getTime()
-
-if (timestamp < timestamp2) {
-    console.log(now.toString())
-} else {
-    console.log(now2.toString())
+if (dateOneTimestamp < dateTwoTimestamp) {
+    console.log(dateOne.toString())
+} else if (dateTwoTimestamp < dateOneTimestamp) {
+    console.log(dateTwo.toString())
 }
-
