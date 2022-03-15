@@ -7,13 +7,15 @@ const filters = {
 renderNotes(notes, filters)
 
 document.querySelector('#create-note').addEventListener('click', function (e) {
+    const id = uuidv4();
+
     notes.push({
         id: uuidv4(),
         title: '',
         body: ''
     })
     localStorage.setItem('notes', JSON.stringify(notes))
-    location.assign('edit.html#' + notes.id)
+    location.assign(`edit.html#${id}`)
 })
 
 document.querySelector('#search-text').addEventListener('input', function (e) {
