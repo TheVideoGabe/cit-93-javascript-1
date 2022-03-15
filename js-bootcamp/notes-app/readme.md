@@ -18,3 +18,6 @@
 
 ### I also thought that refactoring functions into separate Js file as a means to only change the code on the secondary file when you need to change functionalities is cool. Not having to change the details on the main file can be a great time saver.
 
+# syncing pages
+
+### Syncing across pages can be very useful to keep all data up-to-date for certain apps. ex. calendars.
