@@ -40,8 +40,8 @@ button.addEventListener('click', function () {
             textEl.textContent = note.title
         } else {
             textEl.textContent = 'Unnamed Note'
-            textEl.href = "edit.html"
         }
+        textEl.setAttribute('href', 'edit.html')
         noteEl.appendChild(textEl)
         
         return noteEl
