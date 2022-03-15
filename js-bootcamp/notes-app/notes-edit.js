@@ -16,11 +16,13 @@ bodyElement.value = note.body
 
 titleElement.addEventListener('input', function (e) {
     note.title = e.target.value
+    note.updatedAt = moment().valueOf()
     localStorage.setItem('notes', JSON.stringify(notes))
 })
 
 bodyElement.addEventListener('input', function (e) {
     note.body = e.target.value
+    note.updatedAt = moment().valueOf()
     localStorage.setItem('notes', JSON.stringify(notes))
 })
 

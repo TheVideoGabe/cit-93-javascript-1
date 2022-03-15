@@ -12,7 +12,9 @@ document.querySelector('#create-note').addEventListener('click', function (e) {
     notes.push({
         id: uuidv4(),
         title: '',
-        body: ''
+        body: '',
+        createdAt: moment().valueOf(),
+        updatedAt: moment().valueOf()
     })
     localStorage.setItem('notes', JSON.stringify(notes))
     location.assign(`edit.html#${id}`)
@@ -34,17 +36,7 @@ window.addEventListener('storage', function (e) {
     }
 })
 
-// const now = moment()
-// now.subtract(1, 'week').subtract(20, 'days')
-// console.log(now.format('MMMM Do, YYYY'))
-// console.log(now.fromNow())
-// const nowTimestamp = now.valueOf()
+ // add create at and update at to the new notes store timestamps
+ // update update at when someone edits a title or body
+ // delete all old notes before testing
 
-// console.log(moment(nowTimestamp).toString())
-
-// create a new moment
-// set the month day and year to ur birthday
-// use format to print it in the following way jan 6, 1991
-const birthday = moment()
-birthday.year(1998).month(2).date(28)
-console.log(birthday.format('MMM D, YYYY'))
