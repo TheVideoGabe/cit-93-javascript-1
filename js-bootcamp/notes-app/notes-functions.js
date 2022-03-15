@@ -21,9 +21,10 @@ const removeNote = function (id) {
 }
 
 // generate the DOM structure for a note-- takes an argument
+// change textEl into an a tag from the span tag to be able to href
 const generateNoteDOM = function (note) {
     const noteEl = document.createElement('div')
-    const textEl = document.createElement('span')
+    const textEl = document.createElement('a')
     const button = document.createElement('button')
 
 
@@ -39,22 +40,23 @@ button.addEventListener('click', function () {
             textEl.textContent = note.title
         } else {
             textEl.textContent = 'Unnamed Note'
+            textEl.href = "edit.html"
         }
         noteEl.appendChild(textEl)
-
+        
         return noteEl
-}
-
-// render app notes
-const renderNotes = function (notes, filters) {
-    const filteredNotes = notes.filter(function (note) {
-        return note.title.toLowerCase().includes(filters.searchText.toLowerCase())
-    })
-
-    document.querySelector('#notes').innerHTML = ''
-
-    filteredNotes.forEach(function (note) {
-        const noteEl = generateNoteDOM(note)
+    }
+    
+    // render app notes
+    const renderNotes = function (notes, filters) {
+        const filteredNotes = notes.filter(function (note) {
+            return note.title.toLowerCase().includes(filters.searchText.toLowerCase())
+        })
+        
+        document.querySelector('#notes').innerHTML = ''
+        
+        filteredNotes.forEach(function (note) {
+            const noteEl = generateNoteDOM(note)
         document.querySelector('#notes').appendChild(noteEl)
     })
 }
