@@ -14,6 +14,7 @@ document.querySelector('#create-note').addEventListener('click', function (e) {
     })
     localStorage.setItem('notes', JSON.stringify(notes))
     renderNotes(notes, filters)
+    location.assign('edit.html')
 })
 
 document.querySelector('#search-text').addEventListener('input', function (e) {
