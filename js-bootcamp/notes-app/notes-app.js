@@ -13,7 +13,6 @@ document.querySelector('#create-note').addEventListener('click', function (e) {
         body: ''
     })
     localStorage.setItem('notes', JSON.stringify(notes))
-    renderNotes(notes, filters)
     location.assign('edit.html')
 })
 
