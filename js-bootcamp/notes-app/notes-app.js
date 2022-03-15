@@ -13,7 +13,7 @@ document.querySelector('#create-note').addEventListener('click', function (e) {
         body: ''
     })
     localStorage.setItem('notes', JSON.stringify(notes))
-    location.assign('edit.html')
+    location.assign('edit.html#' + notes.id)
 })
 
 document.querySelector('#search-text').addEventListener('input', function (e) {
@@ -24,3 +24,7 @@ document.querySelector('#search-text').addEventListener('input', function (e) {
 document.querySelector('#filter-by').addEventListener('change', function (e) {
     console.log(e.target.value)
 })
+
+// setup the link href to include hash with id
+// setup the assign call to include hash with id
+
