@@ -21,3 +21,13 @@
 # syncing pages
 
 ### Syncing across pages can be very useful to keep all data up-to-date for certain apps. ex. calendars.
+
+# When to use Arrow functions
+
+### We can use arrow functions to simplyfy our code and over time it will help us write code faster.
+
+# Rules to Arrow Functions
+
+### When there is a single line of code inside a function (like a return) we can use short hand syntax to get rid of the function body and just have the expression we want to return.
+
+### If a function has multiple lines of code we can only get rid of the function statement and replace it with an arrow function to simplyfy our code.

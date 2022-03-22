@@ -25,12 +25,6 @@ const under30 = people.filter((person) => person.age < 30)
 
 console.log(under30)
 
-// challenge vid 80
-// Andrews solution
-
 const person = people.find((person) => person.age === 25)
 
 console.log(person.name)
-
-//video 80 response
-// I dont think you would need to use the foreach function for the challenge if you use the find function.
