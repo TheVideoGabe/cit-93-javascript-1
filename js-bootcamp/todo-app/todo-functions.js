@@ -2,7 +2,7 @@
 // get savedtodos
 const getSavedTodos = () => {
   const todosJSON = localStorage.getItem("todos");
-  return todosJSON !== null ? JSON.parse(todosJSON) : []
+  return todosJSON ? JSON.parse(todosJSON) : []
 };
 
 // save and rerender the todo list
@@ -18,7 +18,7 @@ const removeTodo = (id) => {
 const toggleTodo = (id) => {
     const todo = todos .find((todo) => todo.id === id)
 
-    if (todo !== undefined) {
+    if (todo) {
         todo.completed = !todo.completed
     }
 
