@@ -31,3 +31,9 @@
 ### When there is a single line of code inside a function (like a return) we can use short hand syntax to get rid of the function body and just have the expression we want to return.
 
 ### If a function has multiple lines of code we can only get rid of the function statement and replace it with an arrow function to simplyfy our code.
+
+# Truthy and Falsly Understanding.
+
+### Falsly values that resolve to false in a boolean context. They include false, the number 0 (but "0" inside of a string is truthy), null, undefined, empty strings, empty constants and also NaN (non valid operations). These are all falsly values when put inside of a boolean context.
+
+### Truthy values that resolve to true in a boolean context are everything that is not the values above. Even Empty objects and arrays.
