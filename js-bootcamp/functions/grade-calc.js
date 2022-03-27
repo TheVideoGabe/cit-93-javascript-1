@@ -1,7 +1,11 @@
 let gradeCalc = (score, totalScore) => {
-    let percent = (score / totalScore) * 100
-    let letterGrade = ''
-    if (typeof score && typeof totalScore === 'number') {
+    if (typeof score !== 'number' || typeof totalScore !== 'number') {
+        throw Error('Please Provide Numbers Only')
+    }
+    
+        let percent = (score / totalScore) * 100
+        let letterGrade = ''
+
         if (percent >= 90) {
             letterGrade = 'A'
         } else if (percent >= 80) {
@@ -13,18 +17,14 @@ let gradeCalc = (score, totalScore) => {
         } else {
             letterGrade = 'F'
         }
-        return `you got a ${letterGrade} (${percent}%)!`
-    } else {
-        throw Error('Write Numbers Only')
+
+        return `You got a ${letterGrade} (${percent}%)!`
     }
 }
-
-
-
+// we can use e.message to access the error code above.
 try {
-    let result = gradeCalc(15, 20)
+    let result = gradeCalc(9, 20)
     console.log(result)
 } catch (e) {
-    console.log('Can Only Take Numbers')
+    console.log(e.message)
 }
-
