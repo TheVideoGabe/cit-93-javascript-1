@@ -1,3 +1,15 @@
+// helps our code be future proof by preventing global variable leaks.
+'use strict'
+
+
+// const isPublic = true
+// let data
+// const processData = () => {
+//     data = '1234567890'
+// }
+// processData()
+// console.log(data)
+
 // read existing notes in local storage
 const getSavedNotes = () => {
     const notesJSON = localStorage.getItem('notes')

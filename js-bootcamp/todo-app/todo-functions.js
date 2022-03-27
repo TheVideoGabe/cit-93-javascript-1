@@ -1,3 +1,5 @@
+'use strict'
+
 // fetch existing todos from local storage
 // get savedtodos
 const getSavedTodos = () => {

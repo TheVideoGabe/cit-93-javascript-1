@@ -1,3 +1,4 @@
+'use strict'
 // add a dom element between the title and body inputs (span)
 // set the text value : last edited 4 hours ago
 // update value on title/body/storage change
