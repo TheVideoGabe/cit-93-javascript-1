@@ -1,0 +1,71 @@
+html {
+    background-color: rgba(116, 116, 250, 0.781);
+
+}
+
+#header {
+    background-color: rgba(80, 80, 245, 0.562);
+    padding: 0px 10px;
+    border-radius: 200px;
+    box-shadow: 2px 2px #000000;
+}
+
+#logo {
+    height: auto;
+    width: auto;
+    max-height: 72px;
+    max-width: 250px;
+}
+
+#user {
+    float: right;
+    font-size: larger;
+    font-weight: bold;
+}
+
+#formInfo {
+    text-align: center;
+    background-color: rgb(147, 130, 247);
+    font-weight: bold;
+    font-size: larger;
+    border-radius: 200px;
+    box-shadow: 2px 2px #000000;
+}
+
+#firstTitle {
+    text-align: center;
+}
+
+#error {
+    background-color: rgb(250, 181, 192);
+    border-radius: 50px;
+    color: white;
+}
+
+#output {
+    text-align: center;
+    background-color: rgb(104, 153, 243);
+    box-shadow: 2px 2px #000000;
+}
+
+hr {
+    border: 2px solid black;
+
+}
+
+#form2, #rating {
+    text-align: center;
+    font-size: x-large;
+}
+
+#outputSuggestions {
+    text-align: center;
+        font-size: 2em;
+        font-weight: bold;
+        white-space: pre-wrap;
+}
+
+#counter, #result, #gps {
+    text-align: center;
+    align-items: center;
+}

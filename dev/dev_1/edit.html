@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev_1</title>
+</head>
+<body>
+    <div id="header">
+        <nav>
+            <a href="index.html">
+                <img src="vg.png" id="logo">
+            </a>
+        </nav>
+    </div>
+    <div id="outputSuggestions" ></div>
+    <h3 id="rating">How helpful was this list?</h3>
+    <div>
+      <form id="form2">
+        <label
+          >This list was:
+          <select name="helpfulness" id="helpfulness" required>
+            <option value="0"></option>
+            <option value="Not Helpful">Not Helpful</option>
+            <option value="Kind of Helpful">Kind of Helpful</option>
+            <option value="Helpful">Helpful</option>
+            <option value="Very Helpful">Very Helpful</option>
+          </select>
+        </label>
+        <button id="submit">Submit</button>
+        <div id="error"></div>
+      </form>
+    </div>
+    <script src="functions.js"></script>
+    <script src="edit.js"></script>
+  </body>
+</html>
