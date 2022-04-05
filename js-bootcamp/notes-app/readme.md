@@ -52,3 +52,4 @@
 
 ### constructor functions start with capital letters to make it a bit more obvious that we are creating a constructor function.
 
+### Using arrow functions doesn't bind .this to our constructor functions so they can't be written that way.
