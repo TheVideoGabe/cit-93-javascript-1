@@ -77,4 +77,15 @@
 
 # Video 94
 
-### 
+### hasownproperty returns true or false
+
+### everytime we use a .example method we are accessing them via prototypal inheritance.
+
+### The prototype chain is built into javascript: Functions -> .methods -> null
+
+### we can use __Proto__ in the browser to visualize the protoype chain.
+
+### literal syntax can be used to create a new objects
+
+### There a many ways to build objects but using javascript's built in literal syntax to do so is best.
+
