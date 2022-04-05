@@ -37,3 +37,18 @@
 ### Falsly values that resolve to false in a boolean context. They include false, the number 0 (but "0" inside of a string is truthy), null, undefined, empty strings, empty constants and also NaN (non valid operations). These are all falsly values when put inside of a boolean context.
 
 ### Truthy values that resolve to true in a boolean context are everything that is not the values above. Even Empty objects and arrays.
+
+# OOP Notes
+
+### Programming that focuses on code re-usability
+
+### like a method inside of an object that can be used again to create a new string using the same method.
+
+### we can create functions that serve as a template (instances) and call built in methods without re writting everything again. 
+
+### every instance that we create will have access to the same amount of methods.
+
+### Javascript uses this logic internally behind the scenes.
+
+### constructor functions start with capital letters to make it a bit more obvious that we are creating a constructor function.
+
