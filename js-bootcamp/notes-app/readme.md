@@ -60,3 +60,6 @@
 ### By itself, this. targets the global object.
 ### Inside a function, this. refers to the global object.
 ### In a function, in strict mode, this. is undefined.
+
+### Prototype inheritance is a way for one object to have get the properties of another object.
+
