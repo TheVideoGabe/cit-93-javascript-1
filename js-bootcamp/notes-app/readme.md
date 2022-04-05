@@ -63,3 +63,18 @@
 
 ### Prototype inheritance is a way for one object to have get the properties of another object.
 
+# Video 93
+
+### The prototype property is for internal use only, we cant seeit we try to access it on an object. 
+
+### the prototype property is what creates the relationship between instance and the methods we can access.
+
+### It allows instances to follow the prototype chain to look for methods.
+
+### Javascript instances work differently compared to Java or C++. Everychange made to a prototype is reflected in every instance.
+
+### its important to know how prototypal inheritance works behind the scenes because most things in javascript are objects.
+
+# Video 94
+
+### 
