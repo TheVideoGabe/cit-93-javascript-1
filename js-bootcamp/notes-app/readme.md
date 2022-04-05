@@ -89,3 +89,20 @@
 
 ### There a many ways to build objects but using javascript's built in literal syntax to do so is best.
 
+# Video 95 
+
+### A primitive value is a value without properties, a non object
+
+### There are 5 primitive values in javascript
+
+### Array Prototype chain: myArray -> array.prototype -> object.prototype -> null
+
+### function prototype chain: my func -> function.prototype -> object.prototype -> null
+
+### this proves that both arrays and functions are objects.
+
+### Object wrappers give primitive values functionality
+
+### string: my string -> string.prototype -> object.prototype -> null 
+
+### the same process above happens for all primitive values. Except Null & Undefined.
