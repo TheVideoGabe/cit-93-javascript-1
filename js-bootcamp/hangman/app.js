@@ -9,8 +9,21 @@
 // boolean: my boolean -> boolean.prototype -> object.prototype -> null 
 
 
-const product = 'computer'
-console.log(product.split(''))
+// const product = 'computer'
+// console.log(product.split(''))
 
-const otherProduct = new String('phone')
-console.log(otherProduct)
+// const otherProduct = new String('phone')
+// console.log(otherProduct)
+
+const wordEl = document.querySelector('#word')
+const guessesEl = document.querySelector('#guesses')
+wordEl.textContent = game1.getPuzzle()
+guessesEl.textContent = game1.remainingGuesses
+
+
+window.addEventListener('keypress', function (e) {
+    const guess = e.key
+    game1.makeGuess(guess)
+    wordEl.textContent = game1.getPuzzle()
+    guessesEl.textContent = game1.remainingGuesses
+})
