@@ -1,4 +1,6 @@
 // prototypo inheritance
+// myperson > person.prototype > object.prototype > null
+
 
 class Person {
     constructor(firstName, lastName, age, likes = []) {
@@ -22,9 +24,47 @@ class Person {
     }
 }
 
-const me = new Person('Andrew', 'Mead', 27, ['teaching', 'biking'])
-me.setName('Alexis Turner')
-console.log(me.getBio())
 
-const person2 = new Person('Gabriel', 'Corral', 24)
-console.log(person2.getBio())
+class Employee extends Person{
+    constructor(firstName, lastName, age, position, likes, ) {
+        super(firstName, lastName, age, likes)
+        this.position = position
+    }
+    getBio() {
+        return `${this.firstName} ${this.lastName} is a ${this.position}.`
+    }
+    getYearsLeft() {
+        return 65 - this.age
+    }
+}
+
+
+// create a class for students extend from person
+// track students grade 0-100
+// override bio to print a fail pass grade message. 70 and above is pass message else fail message.
+// create new method "updateGrade" that takes the amount to add or remove from grade
+
+// create student print status change grade to change status
+// print again
+
+class Student extends Person {
+    constructor(firstName, lastName, age, likes, grades,) {
+        super(firstName, lastName, age, likes)
+        this.grades = grades
+    }
+    updateGrade(points) {
+        this.grades += points
+    }
+    getBio() {
+        if (this.grades >= 70) {
+            return `${this.firstName} has ${this.grades} and is Passing`
+        } else {
+            return `${this.firstName} has ${this.grades} and is failing`
+        }
+    }
+}
+
+const newStudent = new Student('gabriel', 'corral', 24, [], 77,)
+console.log(newStudent.getBio())
+newStudent.updateGrade(-77)
+console.log(newStudent.getBio())
