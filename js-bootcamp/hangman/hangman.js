@@ -30,17 +30,13 @@ Hangman.prototype.makeGuess = function (guess) {
     if (isUnique && isBadGuess) {
         this.remainingGuesses--
     }
-    this.isStatus()
+    this.calculateStatus()
 }
 
-Hangman.prototype.isStatus = function () {
-    this.word.forEach((letter) => {
-        if (this.guessedLetters.includes(letter)) {
-            finished = true
-        } else {
-            finished = false
-        }
-    })
+Hangman.prototype.calculateStatus = function () {
+    const lettersUnguessed = this.word.filter((letter) => !this.guessedLetters.includes(letter))
+    const finished = lettersUnguessed.length === 0
+
     if (this.remainingGuesses <= 0) {
         this.status = 'failed'
     } else if (finished) {
