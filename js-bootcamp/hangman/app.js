@@ -1,7 +1,7 @@
 
 const wordEl = document.querySelector('#word')
 const guessesEl = document.querySelector('#guesses')
-const game1 = new Hangman('cat', 2)
+const game1 = new Hangman('car parts', 2)
 
 wordEl.textContent = game1.Puzzle
 guessesEl.textContent = game1.statusMessage

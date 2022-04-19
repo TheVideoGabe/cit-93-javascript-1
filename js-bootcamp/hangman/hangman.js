@@ -41,8 +41,7 @@ class Hangman {
     this.calculateStatus()
     }
     calculateStatus() {
-        const lettersUnguessed = this.word.filter((letter) => !this.guessedLetters.includes(letter))
-    const finished = lettersUnguessed.length === 0
+    const finished = this.word.every((letter) => this.guessedLetters.includes(letter) || letter === ' ')
 
     if (this.remainingGuesses <= 0) {
         this.status = 'failed'
