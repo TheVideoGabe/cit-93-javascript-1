@@ -1,8 +1,3 @@
-// display puzzle in browser instead of console
-// display the guesses left in the browser
-// separate hangman.js from app.js
-
-
 const Hangman = function (word, remainingGuesses) {
     this.word = word.toLowerCase().split('')
     this.remainingGuesses = remainingGuesses
@@ -35,9 +30,3 @@ Hangman.prototype.makeGuess = function (guess) {
         this.remainingGuesses--
     }
 }
-
-const game1 = new Hangman('cat', 2)
-
-// console.log(game1.getPuzzle())
-// console.log(game1.remainingGuesses)
-
