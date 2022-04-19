@@ -58,11 +58,11 @@ Hangman.prototype.calculateStatus = function () {
     }
 }
 
-Hangman.prototype.statusMessage = function () {
+Hangman.prototype.getStatusMessage = function () {
     if (this.status === 'playing') {
         return `guesses left: ${this.remainingGuesses}`
     } else if (this.status === 'failed') {
-        return `nice try the word was cat!`
+        return `nice try! the word was "${this.word.join('')}"!`
     } else 
-    return `great job you guessed the word!`
+    return `great work you guessed the word!`
 }
