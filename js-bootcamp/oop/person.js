@@ -38,29 +38,17 @@ class Employee extends Person{
     }
 }
 
-
-// create a class for students extend from person
-// track students grade 0-100
-// override bio to print a fail pass grade message. 70 and above is pass message else fail message.
-// create new method "updateGrade" that takes the amount to add or remove from grade
-
-// create student print status change grade to change status
-// print again
-
 class Student extends Person {
-    constructor(firstName, lastName, age, likes, grades,) {
+    constructor(firstName, lastName, age, likes, grade,) {
         super(firstName, lastName, age, likes)
-        this.grades = grades
+        this.grade = grade
     }
-    updateGrade(points) {
-        this.grades += points
+    updateGrade(change) {
+        this.grade += change
     }
     getBio() {
-        if (this.grades >= 70) {
-            return `${this.firstName} has ${this.grades} and is Passing`
-        } else {
-            return `${this.firstName} has ${this.grades} and is failing`
-        }
+        const status = this.grade >= 70 ? 'passing' : 'failing'
+        return `${this.firstName} is ${status} the class`
     }
 }
 
