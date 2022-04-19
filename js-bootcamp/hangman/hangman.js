@@ -1,3 +1,11 @@
+// disable guesses if not in playing state
+// create new mwthod that returns a string with a status message from below:
+
+// playing: guesses left: 3
+// failed: nice try the word was cat!
+// finished : great job you guessed the word!
+
+
 const Hangman = function (word, remainingGuesses) {
     this.word = word.toLowerCase().split('')
     this.remainingGuesses = remainingGuesses
@@ -23,6 +31,10 @@ Hangman.prototype.makeGuess = function (guess) {
     const isUnique = !this.guessedLetters.includes(guess)
     const isBadGuess = !this.word.includes(guess)
 
+    if (this.status !== 'playing') {
+        return
+    }
+
     if (isUnique) {
         this.guessedLetters.push(guess)
     }
@@ -44,4 +56,13 @@ Hangman.prototype.calculateStatus = function () {
     } else{
         this.status = 'playing'
     }
+}
+
+Hangman.prototype.statusMessage = function () {
+    if (this.status === 'playing') {
+        return `guesses left: ${this.remainingGuesses}`
+    } else if (this.status === 'failed') {
+        return `nice try the word was cat!`
+    } else 
+    return `great job you guessed the word!`
 }
