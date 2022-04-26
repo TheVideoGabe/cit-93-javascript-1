@@ -26,22 +26,27 @@ request.addEventListener('readystatechange', (e) => {
     if (e.target.readyState === 4 && e.target.status === 200) {
         const data = JSON.parse(e.target.responseText)
         console.log(data)
-        const myCountry = data.find((myCountry) => myCountry.cca2 === countryCode)
-        console.log(myCountry.name)
     } else if (e.target.readyState === 4) {
         console.log('An error has taken place')
     }
 })
 
-// request.open('GET', 'http://puzzle.mead.io/puzzle?wordCount=3')
-// request.send()
-
-// make new request for all of the countries
-// parse the response text to get an array of objects
-// find your country object by country code alpha2code property
-// print the name property
-
-const countryCode = "US"
-
-request.open('GET', 'https://restcountries.com/v3.1/all')
+request.open('GET', 'http://puzzle.mead.io/puzzle?wordCount=3')
 request.send()
+
+
+const countryCode = "MX"
+const countryRequest = new XMLHttpRequest()
+
+countryRequest.addEventListener('readystatechange', (e) => {
+    if (e.target.readyState === 4 && e.target.status === 200) {
+        const data = JSON.parse(e.target.responseText)
+        const country = data.find((country) => country.cca2 === countryCode)
+        console.log(country.name)
+    } else if (e.target.readyState === 4) {
+        console.log('An error has taken place')
+    }
+})
+
+countryRequest.open('GET', 'https://restcountries.com/v3.1/all')
+countryRequest.send()
