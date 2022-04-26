@@ -18,7 +18,7 @@ window.addEventListener('keypress', function (e) {
     console.log(game1.status)
 })
 
-getPuzzle((error, puzzle) => {
+getPuzzle("5", (error, puzzle) => {
     if (error) {
         console.log(`Error: ${error}`)
     } else {
@@ -34,21 +34,16 @@ getPuzzle((error, puzzle) => {
 // console.log('do something else')
 
 
-// making an http request
+// make new function for getting country details
+// call it with two arguments country code and the callback function
+// make http request and call the callback with country information
+// use the callback to get the country name
 
 
-// const countryCode = "MX"
-// const countryRequest = new XMLHttpRequest()
-
-// countryRequest.addEventListener('readystatechange', (e) => {
-//     if (e.target.readyState === 4 && e.target.status === 200) {
-//         const data = JSON.parse(e.target.responseText)
-//         const country = data.find((country) => country.cca2 === countryCode)
-//         console.log(country.name)
-//     } else if (e.target.readyState === 4) {
-//         console.log('An error has taken place')
-//     }
-// })
-
-// countryRequest.open('GET', 'https://restcountries.com/v3.1/all')
-// countryRequest.send()
+getCountry("US", (error, country) => {
+    if (error) {
+        console.log(`Error: ${error}`)
+    } else {
+        console.log(country.name)
+    }
+})
