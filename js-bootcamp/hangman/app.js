@@ -34,16 +34,10 @@ getPuzzle("5", (error, puzzle) => {
 // console.log('do something else')
 
 
-// make new function for getting country details
-// call it with two arguments country code and the callback function
-// make http request and call the callback with country information
-// use the callback to get the country name
-
-
 getCountry("US", (error, country) => {
     if (error) {
         console.log(`Error: ${error}`)
     } else {
-        console.log(country.name)
+        console.log(`Country name: ${country.name}`)
     }
 })

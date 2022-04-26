@@ -36,7 +36,7 @@ countryRequest.addEventListener('readystatechange', (e) => {
         const country = data.find((country) => country.cca2 === countryCode)
         callBack(undefined, country)
     } else if (e.target.readyState === 4) {
-        callBack('something went wrong')
+        callBack('Unable to fetch data')
     }
 })
 countryRequest.open('GET', 'https://restcountries.com/v3.1/all')
