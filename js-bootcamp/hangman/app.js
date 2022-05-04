@@ -26,3 +26,12 @@ getCountry('US').then((country) => {
     console.log(`error:${err}`)
 })
 
+// create getLocation function which takes no arguments
+// setup getLocation to make a request to the url and parse the data
+// use getLocation to print the city, region, and country information
+
+getLocation().then((location) => {
+    console.log(`You are in located in the ${location.country}. Your region is ${location.region}, and you live in the city of ${location.city}.`)
+}).catch((err) => {
+    console.log(err)
+})
