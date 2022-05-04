@@ -20,6 +20,17 @@ getPuzzle('2').then((puzzle) => {
     console.log(`error:${err}`)
 })
 
+
+//convert getcountry to use fetch and return a promise
+// make sure getcountry still resolves with the country that matches
+// change the get country usage to use catch
+
+getCountry('US').then((country) => {
+    console.log(country.name)
+}).catch((err) => {
+    console.log(`error:${err}`)
+})
+
 // getCountry('MX').then((country) => {
 //     console.log(country.name)
 // }, (err) => {
