@@ -9,17 +9,10 @@ const getPuzzle = async (wordCount) => {
     }
 }
 
-// create a new funcion called getcurrentcountry
-// should return a promise that resolves the country object for your current locatioon
-// use async await for the new function
-
-// Keep getting errors about fetch location...
 const getCurrentCountry = async () => {
-    let currentLocation = await getLocation()
-    const currentCountry = getCountry(currentLocation.country)
-    return currentCountry
+    const location = await getLocation()
+    return getCountry(location.country)
 }
-
 
 const getCountry = async (countryCode) => {
     const response = await fetch(`https://restcountries.com/v3.1/all`)
