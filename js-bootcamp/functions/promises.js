@@ -1,41 +1,55 @@
-const { promisify } = require("util")
-
 //callback
-const getDataCallback = (callback) => {
+const getDataCallback = (num, callback) => {
     setTimeout(() => {
-        callback('this is my callback error', undefined)
-        callback('this is my callback error', undefined)
+        if (typeof num === 'number') {
+            callback(undefined, num * 2)
+        } else {
+            callback('Number must be provided')
+        }
     }, 2000)
 }
-
-getDataCallback((err, data) => {
+//callback hell, nesting is bad. 
+getDataCallback(2, (err, data) => {
     if (err) {
         console.log(err)
     } else {
-        console.Console(data)
+        getDataCallback(data, (err, data) => {
+            if (err) {
+                console.log('err')
+            } else {
+                console.log(data)
+            }
+        })
     }
 })
 
 // promise
-const getDataPromise = (data) => {
+const getDataPromise = (num) => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            resolve(`this is my success data ${data}`)
-            // reject('this is my promise error')
-            // reject('this is my promise error')
+            typeof num === 'number' ? resolve(num * 2) : reject('number must be provided')
         }, 2000)
     })
 }
 
-const myPromise = getDataPromise(123)
-myPromise.then((data) => {
-    console.log(data)
+getDataPromise(2).then((data) => {
+    getDataPromise(data).then((data) => {
+        console.log(data)
+    }, (err) => {
+        console.log(err)
+    })
 }, (err) => {
+    console.log(err)
+})
+//promise chain (return)
+getDataPromise(10).then((data) => {
+    return getDataPromise(data)
+}).then((data) => {
+    return getDataPromise(data)
+}).then((data) => {
+    console.log(data)
+    //very useful
+}).catch((err) => {
     console.log(err)
 })
 
-myPromise.then((data) => {
-    console.log(data)
-}, (err) => {
-    console.log(err)
-})
