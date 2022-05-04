@@ -14,17 +14,14 @@ window.addEventListener('keypress', function (e) {
     console.log(game1.status)
 })
 
-getPuzzle('5').then((puzzle) => {
+getPuzzle('2').then((puzzle) => {
     console.log(puzzle)
 }, (err) => {
     console.log(`error:${err}`)
 })
 
-// convert getcountry to return new promise 
-// call getcountry and use then to print country name or the error 
-
-getCountry('US').then((country) => {
-    console.log(`Country name: ${country.name}`)
-}, (error) => {
-console.log(`Error: ${error}`)
+getCountry('MX').then((country) => {
+    console.log(country.name)
+}, (err) => {
+console.log(`Error: ${err}`)
 })
